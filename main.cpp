@@ -65,7 +65,7 @@ int leerNumeroBinario(string nombre_archivo)
 void escribirStringBinario(string nombre_archivo, string str)
 {
     ofstream out (nombre_archivo.c_str());//se escribe el archivo
-    out.write(str.c_str(),4);//se escribe la variable str en el archivo
+    out.write(str.c_str(),10);//se escribe la variable str en el archivo
     out.close();//se cierra el archivo
     //ayuda obtenida de: http://www.cplusplus.com/forum/general/100714/
 
@@ -74,8 +74,8 @@ string leerStringBinario(string nombre_archivo)
 {
     ifstream in(nombre_archivo.c_str());//se lee el archivo
 
-    char leido[4];//se declara la variable enviandole un parametro
-    in.read(leido,4);// se lee la variable char
+    char leido[10];//se declara la variable enviandole un parametro
+    in.read(leido,10);// se lee la variable char
 
     return leido; // se devuelve la variable leido
 
@@ -89,9 +89,9 @@ bool existe(string nombre_archivo, string str)
     string palabra;//se declara la variable para luego compararla
     int cant;//se declara la variable int para el limite del ciclo
 
-    for(int i=0;i < cant;i++)//se inicia el ciclo para comparar las palabras
+    while(in>>palabra)//se inicia el ciclo para comparar las palabras
     {
-        in>>palabra;//se ingresa la variable para evaluar
+
         if(palabra == str)//se evalua la comparacion
         {
             return true;//Si la condicion en verdadera devuelve true
